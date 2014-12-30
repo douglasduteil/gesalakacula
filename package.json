@@ -1,0 +1,31 @@
+{
+  "name": "gesalakacula",
+  "version": "1.0.0",
+  "description": "Generate SauceLabs Karma Custom Launchers --- aka --- Ge-Sa-La-Ka-Cu-La-aaaaa",
+  "main": "./lib/gesalakacula",
+  "keywords": [
+    "karma",
+    "karma-sauce-launcher",
+    "util"
+  ],
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/douglasduteil/gesalakacula.git"
+  },
+  "author": {
+    "name": "Douglas Duteil",
+    "email": "douglasduteil@gmail.com"
+  },
+  "homepage": "https://github.com/douglasduteil/gesalakacula",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/douglasduteil/gesalakacula/issues"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0"
+  }
+}
