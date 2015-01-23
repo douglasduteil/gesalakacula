@@ -3,6 +3,7 @@
 var expect = require('chai').expect;
 
 var geSaLaKaCuLa = require('../lib/gesalakacula');
+var reKaLa = geSaLaKaCuLa.recursiveKarmaLauncher;
 
 describe('GeSaLaKaCuLa', function () {
 
@@ -90,6 +91,16 @@ describe('GeSaLaKaCuLa', function () {
       expect(geSaLaKaCuLa({ A: { B: {} } })).to.eql({});
       expect(geSaLaKaCuLa({ A: { B: [] } })).to.eql({});
       expect(geSaLaKaCuLa({ A: { B: '' } })).to.eql({});
+    });
+  });
+
+});
+
+describe('ReKaLa', function () {
+
+  describe('with incomplete config', function () {
+    it('should throw if karma is not found', function () {
+      expect(reKaLa).to.throw('You must give me your "Karma" server !');
     });
   });
 
