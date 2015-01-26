@@ -85,7 +85,7 @@ geSaLaKaCuLa({
   'OS X 10.9': {
     'ipad': '7.0,7.1,8.0,8.1',
     'iphone': '7.0,7.1,8.0,8.1',
-    'chrome': '31..39,beta,dev',
+    'chrome': '31..39',
     'firefox': '4..34,beta,dev',
     'safari': '7'
   },
