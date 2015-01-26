@@ -122,6 +122,64 @@ geSaLaKaCuLa({
 
 [Check my dummy fuzzy batman for more](https://github.com/douglasduteil/dummy-fuzzy-batman)
 
+## Extra: Re-Ka-La-Re-Ka-La-Re-Ka-La
+
+> Sauce Labs provide free accounts for open source project with
+> - Unlimited testing minutes
+> - 3 parallel tests
+> - 3 queued tests
+
+![giphy](https://cloud.githubusercontent.com/assets/730511/5900580/309f3842-a56b-11e4-8186-a4e5614ec9d4.gif)
+
+Karma is a bit difficult to configure with Sauce Labs. Like there is no "queue" principal, Karma try to connect to all the browsers at the same time. There for when a browser in the Sauce Labs queue will often reach the `browserDisconnectTimeout` and cause the test to fail without actually running them.
+
+**So I came with a simple idea of recursively restarting a karma server with the 3 parallel browsers limit of  Sauce Labs.**
+
+Thus, there is not potential `browserDisconnectTimeout` of browser in the Sauce Labs queue...
+
+![giphy 1](https://cloud.githubusercontent.com/assets/730511/5900864/b04543c8-a56d-11e4-9abb-01b5279d50b8.gif)
+
+### Usage
+
+```js
+var reKaLa = geSaLaKaCuLa.recursiveKarmaLauncher;
+
+reKaLa({
+  karma: require('karma').server,
+  customLaunchers: geSaLaKaCuLa({'Linux': {'chrome': '20..30'}})
+}, function (code){
+  console.log('reKaLa end with ', code);
+  process.exit(code);
+});
+```
+
+#### `reKaLa(opts, doneCallback)`
+
+`opts`
+The options for `reKaLa`
+(TODO can be using as extended karma options ?)
+
+require :
+```
+{
+  karma: require('karma').server
+}
+```
+default :
+```
+{
+  configFile: './karma.conf.js',
+  customLaunchers: {},
+  maxConcurrentRun : 3
+}
+```
+
+<br>
+
+`doneCallback`
+will be call at the recursion end with the incremented exit code (of each karma run).
+
+
 ## License
 
     Copyright © 2014 Douglas Duteil <douglasduteil@gmail.com>
