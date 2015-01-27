@@ -153,10 +153,9 @@ reKaLa({
 });
 ```
 
-#### `reKaLa(opts, doneCallback)`
+#### `.recursiveKarmaLauncher(opts, doneCallback)`
 
-`opts`
-The options for `reKaLa`
+`opts` : The options for `reKaLa`
 (TODO can be using as extended karma options ?)
 
 require :
@@ -176,8 +175,7 @@ default :
 
 <br>
 
-`doneCallback`
-will be call at the recursion end with the incremented exit code (of each karma run).
+`doneCallback`: will be call at the recursion end with the incremented exit code (of each karma run).
 
 
 ## License
