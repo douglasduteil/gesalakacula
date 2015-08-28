@@ -126,14 +126,13 @@ geSaLaKaCuLa({
 
 > Sauce Labs provide free accounts for open source project with
 > - Unlimited testing minutes
-> - 3 parallel tests
-> - 3 queued tests
+> - 5 parallel tests
 
 ![giphy](https://cloud.githubusercontent.com/assets/730511/5900580/309f3842-a56b-11e4-8186-a4e5614ec9d4.gif)
 
 Karma is a bit difficult to configure with Sauce Labs. Like there is no "queue" principal, Karma try to connect to all the browsers at the same time. There for when a browser in the Sauce Labs queue will often reach the `browserDisconnectTimeout` and cause the test to fail without actually running them.
 
-**So I came with a simple idea of recursively restarting a karma server with the 3 parallel browsers limit of  Sauce Labs.**
+**So I came with a simple idea of recursively restarting a karma server with the 5 parallel browsers limit of  Sauce Labs.**
 
 Thus, there is not potential `browserDisconnectTimeout` of browser in the Sauce Labs queue...
 
@@ -169,7 +168,7 @@ default :
 {
   configFile: './karma.conf.js',
   customLaunchers: {},
-  maxConcurrentRun : 3
+  maxConcurrentRun : 5
 }
 ```
 
